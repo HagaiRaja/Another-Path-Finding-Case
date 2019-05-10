@@ -42,11 +42,11 @@ Ingat ketika sudah selesai memasukkan matriks, tekan ctrl+d untuk menghentikan p
 
 ### Keluaran 1
 6 <br />
-6.748ms <br />
+5.696ms <br />
 
-### Screenshot
+### Screenshot 1
 
-<img src="img/1.png" width="300" height="150" /> 
+<img src="img/1.png" width="300" height="150" /> <br />
 ### Masukan 2
 2 3 0 1 3 1 <br />
 1 0 1 3 1 3 <br />
@@ -57,7 +57,11 @@ Ingat ketika sudah selesai memasukkan matriks, tekan ctrl+d untuk menghentikan p
 
 ### Keluaran 2
 0 <br />
-8.081ms <br />
+5.68ms <br />
+
+### Screenshot 2
+
+<img src="img/2.png" width="300" height="150" /> <br />
 
 ### Masukan 3
 2 4 5 5 9 6 <br />
@@ -70,6 +74,10 @@ Ingat ketika sudah selesai memasukkan matriks, tekan ctrl+d untuk menghentikan p
 ### Keluaran 3
 2 <br />
 6.508ms <br />
+
+### Screenshot 3
+
+<img src="img/3.png" width="300" height="150" /> <br />
 
 ### Masukan 4
 8 3 8 6 0 9 9 5 4 4 0 0 7 7 7 8 9 8 8 5 <br />
@@ -97,3 +105,6 @@ Ingat ketika sudah selesai memasukkan matriks, tekan ctrl+d untuk menghentikan p
 2943
 7.065ms
 
+### Screenshot 4
+
+<img src="img/4.png" width="300" height="150" /> <br />
