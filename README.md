@@ -19,6 +19,7 @@ selain itu, 		       pathDP(i,j) = \sum \limits_{right=0}^{papancatur[i][j]} {f(
 ![](https://latex.codecogs.com/svg.latex?y%3Dx%5E2)
 ```
 
+![](https://latex.codecogs.com/svg.latex?y%3Dx%5E2)
 ## Keterangan
 1. Gerak ke kanan ditandai dengan nilai i yang bertambah, sedangkan gerak kebawah ditandakan dengan nilai j yang bertambah
 
