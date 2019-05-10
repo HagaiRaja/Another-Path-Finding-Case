@@ -1,77 +1,28 @@
 # Dynamic Programming : Another Path Finding Case
-### **_(Ubah file README.md ini setelah program diselesaikan)_**
 
-## Latar Belakang
-*Path Finding* adalah masalah yang berfokus untuk mencari langkah paling optimum untuk bergerak dari posisi asal ke posisi akhir dengan batasan-batasan (*constraints*) tertentu. Masalah ini dapat diselesaikan dengan mudah menggunakan pendekatan strategi algoritma *dynamic programming* seperti pada contoh berikut oleh  [GeeksForGeeks](https://www.geeksforgeeks.org/min-cost-path-dp-6/). Banyak penerapan yang memiliki fokus berbeda terkait topik *Path Finding* seperti pada robot, game, image processing serta pengelolahan efisien industri. Semua kasus ini berkutat dalam mengoptimasi dari sisi paling pendek, paling murah, paling cepat dan parameter lainnya. 
+## Path Finding
+Path finding dalam permasalahan kali ini ialah mencari suatu jalan dari petak 1,1 menuju petak N,N dengan catatan disetiap langkahnya hanya boleh berjalan kekanan atau kebawah sebanyak jumlah angka di petak yang terakhir ditempati.
 
-Pada tugas kali ini, anda akan bertugas untuk memodifikasi algoritma *path finding* agar sesuai dengan kebutuhan soal. Diharapkan melalui tugas ini, anda dapat lebih memahami penerapan strategi *dynamic programming* yang sering digunakan dalam dunia IT terkhusus filosofi cara berpikir penyelesaian masalah terkait *path finding*. Selamat mengerjakan!
+## Dynamic Programming
+Permasalahan path finding ini dapat diselesaikan dengan Dynamic Programming (DP). DP adalah teknik pemecahan masalah dengan memecah perseolan besar menjadi persoalan yang lebih kecil sehingga perseolan yang besar dapat diselesaikan. Kebanyakan program DP bisa juga diselesaikan dengan cara rekursif. DP ini dianggap sebagai teknik efesiensi waktu dari teknik pemecahan masalah secara rekursif karena dengan DP dapat memoisasi hasil pencarian dari STEP yang sudah dijalankan sehingga tidak perlu dicari kembali. 
 
-## Kasus Path Finding
-Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
-1. Terdapat sebuah papan catur *N x N* dengan setiap kotaknya berisi bilangan non negatif.
-2. Di awal, suatu bidak berada kotak (1, 1) atau yang di pojok kiri atas.
-3. Berikutnya secara berulang bidak dapat dipindahkan (1) horizontal ke kanan, atau (2) vertikal ke bawah sekian kotak sebanyak dengan bilangan pada kotak terakhir bidak itu berada, kecuali kalau membawa bidak keluar dari papan.
-4. Tujuan akhir adalah kotak (N, N) atau yang pojok kanan bawah.
-5. Bila bilangan terakhir adalah 0 dan bukan di pojok maka bidak berhenti (tidak dapat melanjutkan langkah kecuali kalau sudah mencapai tujuan).
+### Ide Dynamic Programming
 
-## Spesifikasi
-Lakukan fork terhadap repository ini.
+Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai pathDP(i,j). Setiap pathDP(i,j) pada rekursif mencari banyaknya macam cara yang dapat ditempuh dari petak (i,j) menuju petak (N,N). Dengan basis pada pathDP(N,N) secara trivia kita bisa tahu bahwa banyaknya cara dari petak (N,N) menuju petak (N,N) adalah 1. Selain itu kita harus menghitung jumlah macam cara dari semua petak yang dapat dijadikan petak selanjutnya. Ini bisa dilakukan dengan cara rekursif.
 
-Buatlah dalam bahasa pemrograman **_Python_** atau **_C++_**, sebuah fungsi dalam program berbasis CLI yang dapat menyelesaikan persoalan cerita diatas yang menghitung :
-1. Banyaknya cara yang mungkin untuk bisa mencapai tujuan akhir.
-2. Waktu yang digunakan untuk mencari semua solusi.
+Secara matematika bisa dinotasikan sebagai berikut :
 
-Deklarasi fungsi :
-```C++
-int pathFinding(papanCatur);
-```
-Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
+untuk i = N-1 dan j = N-1, pathDP(i,j) = 1 																		---Basis
+untuk i >= N atau j > N,   pathDP(i,j) = 0																		---Basis
+selain itu, 		       pathDP(i,j) = \sum \limits_{right=0}^{papancatur[i][j]} {f(i+right,j+(N-right))}  	---Rekursif
 
-**Setelah program dan laporan pada Readme.md anda sudah selesai, lakukan pull request kembali pada branch ini.**
+Keterangan :
+Gerak ke kanan ditandai dengan nilai i yang bertambah, sedangkan gerak kebawah ditandakan dengan nilai j yang bertambah
 
-## Contoh Kasus Uji
-### Contoh Kasus Uji 1 
-Input :
-```
-2 3 3 1
-1 2 1 3
-1 2 3 1
-3 1 1 0
-```
-Output :
-```
-6
-20ms
-```
-Penjelasan :
-jalur yang mungkin adalah
-1. [1][1] -> [2][2] -> [2][4] -> [4][4]
-2. [1][1] -> [3][1] -> [4][3] -> [4][4]
-3. [1][1] -> [3][1] -> [3][4] -> [4][4]
-4. [1][1] -> [1][3] -> [1][4] -> [4][4]
-5. [1][1] -> [1][3] -> [2][3] -> [3][4] -> [4][4]
-6. [1][1] -> [1][3] -> [2][3] -> [4][3] -> [4][4]
+## Spesifikasi Mesin
 
-### Contoh Kasus Uji 2
-Input:
-```
-2 3 0 1 3 1
-1 0 1 3 1 3
-0 2 3 1 3 1
-3 1 1 0 1 0
-1 2 1 3 1 3
-3 1 1 0 1 0
-```
-Output :
-```
-0
-1ms
-```
+Processor : Intel Core I5-6200U
+RAM : 4 GB
+Sistem Operasi : Ubuntu 18.04
 
-## Penilaian
-- Kebenaran keluaran fungsi - 40%
-- Pemahaman tentang dynamic programming dan path finding (jelaskan langkah yang digunakan secara singkat) - 30%
-- Kecepatan eksekusi program (lampirkan screenshot pada readme beserta spesifikasi mesin yang dipakai untuk testing) - 20%
-- Kecepatan Pull Request - 10%
-
-Nilai maksimum yang bisa didapatkan adalah **700** poin. _(Tujuh Ratus)_
+##
