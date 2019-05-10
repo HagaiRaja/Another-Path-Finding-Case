@@ -29,27 +29,29 @@ Sistem Operasi : Ubuntu 18.04 <br />
 ## Cara Menjalankan 
 Compile : g++ path-finding.cpp -o path-finding <br />
 Run : ./path-finding <br />
+Ingat ketika sudah selesai memasukkan matriks, tekan ctrl+d untuk menghentikan program <br />
 
 ## Contoh Inputan / Keluaran
 
 ### Inputan 1
-2 3 3 1
-1 2 1 3
-1 2 3 1
-3 1 1 0
+
+2 3 3 1 <br />
+1 2 1 3 <br />
+1 2 3 1 <br />
+3 1 1 0 <br />
 
 ### Keluaran 1
-6
-6.748ms
+6 <br />
+6.748ms <br />
 
 ### Masukan 2
-2 3 0 1 3 1
-1 0 1 3 1 3
-0 2 3 1 3 1
-3 1 1 0 1 0
-1 2 1 3 1 3
-3 1 1 0 1 0
+2 3 0 1 3 1 <br />
+1 0 1 3 1 3 <br />
+0 2 3 1 3 1 <br />
+3 1 1 0 1 0 <br />
+1 2 1 3 1 3 <br />
+3 1 1 0 1 0 <br />
 
 ### Keluaran 2
-0
-8.081ms
+0 <br />
+8.081ms <br />
