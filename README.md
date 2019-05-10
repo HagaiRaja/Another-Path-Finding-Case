@@ -13,8 +13,8 @@ Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai f(i,j). Setiap 
 Secara matematika bisa dinotasikan sebagai berikut :
 
 
-untuk i = N-1 dan j = N-1, f(i,j) = 1 																		---Basis <br />
-untuk i >= N atau j > N,   f(i,j) = 0																		---Basis <br />
+untuk i = N dan j = N, f(i,j) = 1 																		---Basis <br />
+untuk i > N atau j > N,   f(i,j) = 0																		---Basis <br />
 selain itu, 		       f(i,j) = <img src="img/sigma.jpg" width="150" height="30" /> 												---Rekursif <br />
 
 ## Keterangan
