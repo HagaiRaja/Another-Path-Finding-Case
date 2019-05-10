@@ -8,7 +8,7 @@ Permasalahan path finding ini dapat diselesaikan dengan Dynamic Programming (DP)
 
 ### Ide Dynamic Programming
 
-Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai pathDP(i,j). Setiap pathDP(i,j) pada rekursif mencari banyaknya macam cara yang dapat ditempuh dari petak (i,j) menuju petak (N,N). Dengan basis pada pathDP(N,N) secara trivia kita bisa tahu bahwa banyaknya cara dari petak (N,N) menuju petak (N,N) adalah 1. Selain itu kita harus menghitung jumlah macam cara dari semua petak yang dapat dijadikan petak selanjutnya. Ini bisa dilakukan dengan cara rekursif.
+Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai f(i,j). Setiap f(i,j) pada rekursif mencari banyaknya macam cara yang dapat ditempuh dari petak (i,j) menuju petak (N,N). Dengan basis pada f(N,N) secara trivia kita bisa tahu bahwa banyaknya cara dari petak (N,N) menuju petak (N,N) adalah 1. Selain itu kita harus menghitung jumlah macam cara dari semua petak yang dapat dijadikan petak selanjutnya. Ini bisa dilakukan dengan cara rekursif.
 
 Secara matematika bisa dinotasikan sebagai berikut :
 
