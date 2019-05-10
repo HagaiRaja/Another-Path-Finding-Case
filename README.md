@@ -15,7 +15,7 @@ Secara matematika bisa dinotasikan sebagai berikut :
 
 untuk i = N-1 dan j = N-1, pathDP(i,j) = 1 																		---Basis <br />
 untuk i >= N atau j > N,   pathDP(i,j) = 0																		---Basis <br />
-selain itu, 		       pathDP(i,j) = ![alt text](img/sigma.jpg)												---Rekursif <br />
+selain itu, 		       pathDP(i,j) = ![alt text](img/sigma.jpg =100X200)												---Rekursif <br />
 ![](https://latex.codecogs.com/svg.latex?y%3Dx%5E2)
 
 ![](https://latex.codecogs.com/svg.latex?y%3Dx%5E2)
