@@ -12,27 +12,22 @@ Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai pathDP(i,j). Se
 
 Secara matematika bisa dinotasikan sebagai berikut :
 
-untuk i = N-1 dan j = N-1, pathDP(i,j) = 1 																		---Basis
-
-untuk i >= N atau j > N,   pathDP(i,j) = 0																		---Basis
-
-selain itu, 		       pathDP(i,j) = \sum \limits_{right=0}^{papancatur[i][j]} {f(i+right,j+(N-right))}  	---Rekursif
+untuk i = N-1 dan j = N-1, pathDP(i,j) = 1 																		---Basis <br />
+untuk i >= N atau j > N,   pathDP(i,j) = 0																		---Basis <br />
+selain itu, 		       pathDP(i,j) = \sum \limits_{right=0}^{papancatur[i][j]} {f(i+right,j+(N-right))}  	---Rekursif <br />
 
 ## Keterangan
 1. Gerak ke kanan ditandai dengan nilai i yang bertambah, sedangkan gerak kebawah ditandakan dengan nilai j yang bertambah
 
 ## Spesifikasi Mesin
 
-Processor : Intel Core I5-6200U
-
-RAM : 4 GB
-
-Sistem Operasi : Ubuntu 18.04
+Processor : Intel Core I5-6200U <br />
+RAM : 4 GB <br />
+Sistem Operasi : Ubuntu 18.04 <br />
 
 ## Cara Menjalankan 
-Compile : g++ path-finding.cpp -o path-finding
-
-Run : ./path-finding
+Compile : g++ path-finding.cpp -o path-finding <br />
+Run : ./path-finding <br />
 
 ## Contoh Inputan / Keluaran
 
