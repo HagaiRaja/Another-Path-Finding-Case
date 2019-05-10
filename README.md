@@ -46,7 +46,7 @@ Ingat ketika sudah selesai memasukkan matriks, tekan ctrl+d untuk menghentikan p
 
 ### Screenshot
 
-<img src="img/sigma.jpg" width="150" height="150" /> 
+<img src="img/1.jpg" width="300" height="150" /> 
 ### Masukan 2
 2 3 0 1 3 1 <br />
 1 0 1 3 1 3 <br />
