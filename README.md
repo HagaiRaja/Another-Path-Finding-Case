@@ -12,13 +12,12 @@ Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai pathDP(i,j). Se
 
 Secara matematika bisa dinotasikan sebagai berikut :
 
-```
+
 untuk i = N-1 dan j = N-1, pathDP(i,j) = 1 																		---Basis <br />
 untuk i >= N atau j > N,   pathDP(i,j) = 0																		---Basis <br />
-selain itu, 		       pathDP(i,j) = \sum \limits_{right=0}^{papancatur[i][j]} {f(i+right,j+(N-right))}  	---Rekursif <br />
+selain itu, 		       pathDP(i,j) = ![alt text](img/sigma.jpg)												---Rekursif <br />
 ![](https://latex.codecogs.com/svg.latex?y%3Dx%5E2)
-```
-![alt text](img/sigma.jpg)
+
 ![](https://latex.codecogs.com/svg.latex?y%3Dx%5E2)
 ![img]http://www.sciweavers.org/tex2img.php?eq=%5Csum%20%5Climits_%7Bright%3D0%7D%5E%7Bpapancatur%5Bi%5D%5Bj%5D%7D%20%7Bf%28i%2Bright%2Cj%2B%28N-right%29%29%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0[/img]
 ## Keterangan
