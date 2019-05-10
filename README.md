@@ -1,7 +1,7 @@
 # Dynamic Programming : Another Path Finding Case
 
 ## Path Finding
-Path finding dalam permasalahan kali ini ialah mencari suatu jalan dari petak 1,1 menuju petak N,N dengan catatan disetiap langkahnya hanya boleh berjalan kekanan atau kebawah sebanyak jumlah angka di petak yang terakhir ditempati.
+Path finding dalam permasalahan kali ini ialah mencari suatu jalan pada matriks dengan ukuran NxN dari petak 1,1 menuju petak N,N dengan catatan disetiap langkahnya hanya boleh berjalan kekanan atau kebawah sebanyak jumlah angka di petak yang terakhir ditempati.
 
 ## Dynamic Programming
 Permasalahan path finding ini dapat diselesaikan dengan Dynamic Programming (DP). DP adalah teknik pemecahan masalah dengan memecah perseolan besar menjadi persoalan yang lebih kecil sehingga perseolan yang besar dapat diselesaikan. Kebanyakan program DP bisa juga diselesaikan dengan cara rekursif. DP ini dianggap sebagai teknik efesiensi waktu dari teknik pemecahan masalah secara rekursif karena dengan DP dapat memoisasi hasil pencarian dari STEP yang sudah dijalankan sehingga tidak perlu dicari kembali. 
