@@ -56,10 +56,10 @@ void readPapanCatur(int papanCatur[NMax][NMax]) {
         }
     }
 }
-int main() {
+int main(int argc, char** argv) {
     // Preparing Data
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen(argv[1], "r", stdin);
+    // freopen("output.txt", "w", stdout);
     readPapanCatur(papanCatur);
 
     // Start Measure Time
