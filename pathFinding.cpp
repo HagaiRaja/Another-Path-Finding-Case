@@ -1,24 +1,26 @@
 #include <assert.h>
 #include <math.h>
-#include <chrono>
 #include <ctime>
 #include <iostream>
 #include <queue>
 using namespace std;
-using namespace std::chrono;
 const int NMax = 10000;
 
-int C[NMax + 1][NMax + 1];
-int comb(int n, int k) {
+int C[NMax + 1][NMax + 1];  // memo
+int comb(int n, int k) {    // count
     assert(0 <= n && n <= NMax && 0 <= k && k <= n);
-    if (C[n][k] != 0) return C[n][k];
+    if (C[n][k] != 0) return C[n][k];  // return from memo
     for (int i = 0; i <= n; i++)
         for (int j = 0; j <= min(i, k); j++)
-            C[i][j] = (j == 0 || j == i) ? 1 : C[i - 1][j - 1] + C[i - 1][j];
+            C[i][j] = (j == 0 || j == i)
+                          ? 1
+                          : C[i - 1][j - 1] + C[i - 1][j];  // memoize
     return C[n][k];
 }
 
-int papanCatur[NMax][NMax], waysTo[NMax][NMax], N;  // N = Neff papanCatur
+int papanCatur[NMax][NMax];
+int waysTo[NMax][NMax];
+int N;  // N * N == sizeof(papanCatur)
 void waysFromCell(int papanCatur[NMax][NMax], int r, int c) {
     if ((r < N && c <= N) || (r <= N && c < N)) {
         for (int k = 0; k <= papanCatur[r][c]; k++) {
@@ -61,12 +63,12 @@ int main() {
     readPapanCatur(papanCatur);
 
     // Start Measure Time
-    auto start = high_resolution_clock::now();
+    clock_t start = clock();
     int countPath = pathFinding(papanCatur);
-    auto stop = high_resolution_clock::now();
+    clock_t end = clock();
     // End Measure Time
 
     // Output answer
     cout << countPath << endl;
-    cout << duration_cast<microseconds>(stop - start).count() << "ms" << endl;
+    cout << (double)(end - start) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
 }
