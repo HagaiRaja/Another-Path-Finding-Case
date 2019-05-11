@@ -1,12 +1,9 @@
 # Dynamic Programming : Another Path Finding Case
-### **_(Ubah file README.md ini setelah program diselesaikan)_**
 
 ## Latar Belakang
 *Path Finding* adalah masalah yang berfokus untuk mencari langkah paling optimum untuk bergerak dari posisi asal ke posisi akhir dengan batasan-batasan (*constraints*) tertentu. Masalah ini dapat diselesaikan dengan mudah menggunakan pendekatan strategi algoritma *dynamic programming* seperti pada contoh berikut oleh  [GeeksForGeeks](https://www.geeksforgeeks.org/min-cost-path-dp-6/). Banyak penerapan yang memiliki fokus berbeda terkait topik *Path Finding* seperti pada robot, game, image processing serta pengelolahan efisien industri. Semua kasus ini berkutat dalam mengoptimasi dari sisi paling pendek, paling murah, paling cepat dan parameter lainnya. 
 
-Pada tugas kali ini, anda akan bertugas untuk memodifikasi algoritma *path finding* agar sesuai dengan kebutuhan soal. Diharapkan melalui tugas ini, anda dapat lebih memahami penerapan strategi *dynamic programming* yang sering digunakan dalam dunia IT terkhusus filosofi cara berpikir penyelesaian masalah terkait *path finding*. Selamat mengerjakan!
-
-## Kasus Path Finding
+## Deskripsi Persoalan
 Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 1. Terdapat sebuah papan catur *N x N* dengan setiap kotaknya berisi bilangan non negatif.
 2. Di awal, suatu bidak berada kotak (1, 1) atau yang di pojok kiri atas.
@@ -15,9 +12,7 @@ Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 5. Bila bilangan terakhir adalah 0 dan bukan di pojok maka bidak berhenti (tidak dapat melanjutkan langkah kecuali kalau sudah mencapai tujuan).
 
 ## Spesifikasi
-Lakukan fork terhadap repository ini.
-
-Buatlah dalam bahasa pemrograman **_Python_** atau **_C++_**, sebuah fungsi dalam program berbasis CLI yang dapat menyelesaikan persoalan cerita diatas yang menghitung :
+Program **_C++_** berbasis CLI yang dapat menyelesaikan persoalan  di atas yang menghitung :
 1. Banyaknya cara yang mungkin untuk bisa mencapai tujuan akhir.
 2. Waktu yang digunakan untuk mencari semua solusi.
 
@@ -26,8 +21,6 @@ Deklarasi fungsi :
 int pathFinding(papanCatur);
 ```
 Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
-
-**Setelah program dan laporan pada Readme.md anda sudah selesai, lakukan pull request kembali pada branch ini.**
 
 ## Contoh Kasus Uji
 ### Contoh Kasus Uji 1 
@@ -68,10 +61,4 @@ Output :
 1ms
 ```
 
-## Penilaian
-- Kebenaran keluaran fungsi - 40%
-- Pemahaman tentang dynamic programming dan path finding (jelaskan langkah yang digunakan secara singkat) - 30%
-- Kecepatan eksekusi program (lampirkan screenshot pada readme beserta spesifikasi mesin yang dipakai untuk testing) - 20%
-- Kecepatan Pull Request - 10%
-
-Nilai maksimum yang bisa didapatkan adalah **700** poin. _(Tujuh Ratus)_
+## Ide Penyelesaian
