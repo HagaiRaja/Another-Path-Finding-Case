@@ -8,7 +8,7 @@ Permasalahan path finding ini dapat diselesaikan dengan Dynamic Programming (DP)
 
 ### Ide Dynamic Programming
 
-Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai f(i,j). Setiap f(i,j) pada rekursif mencari banyaknya macam cara yang dapat ditempuh dari petak (i,j) menuju petak (N,N). Dengan basis pada f(N,N) secara trivia kita bisa tahu bahwa banyaknya cara dari petak (N,N) menuju petak (N,N) adalah 1. Selain itu kita harus menghitung jumlah macam cara dari semua petak yang dapat dijadikan petak selanjutnya. Ini bisa dilakukan dengan cara rekursif.
+Persoalan Dynamic Programming pada petak i,j dinotasikan sebagai f(i,j). Setiap f(i,j) pada rekursif mencari banyaknya macam cara yang dapat ditempuh dari petak (i,j) menuju petak (N,N). Dengan basis pada f(N,N) secara trivia kita bisa tahu bahwa banyaknya cara dari petak (N,N) menuju petak (N,N) adalah 1. Kasus trivia yang kedua adalah f(i,j) dengan petak(i.j) berada diluar papan catur, ini jelas bahwa tidak ada langkah yang mungkin untuk mencapai titik goal. Sehingga dalam kasus ini, banyaknya langkah adalah 0. Selain itu kita harus menghitung jumlah macam cara dari semua petak yang dapat dijadikan petak selanjutnya. Ini bisa dilakukan dengan cara rekursif. Untuk optimisasi waktu, hasil fungsi yang sudah pernah dijalankan disimpan ke dalam array.
 
 Secara matematika bisa dinotasikan sebagai berikut :
 
