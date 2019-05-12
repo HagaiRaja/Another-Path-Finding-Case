@@ -102,8 +102,8 @@ Algoritma:
 - Hasil yang kita cari akan terdapat di _waysTo[N][n]_
 
 Jika, dirumuskan, setiap isi dari waysTo[][] di isi dengan aturan berikut:
-$$waysTo(r,c) = 1 \text{, untuk (i,j) yang dapat mencapai (r,c) dan (r,c)=(1,1)}$$
-$$waysTo(r,c) = \sum_{i,j}^{} waysTo(i, j) \text{, untuk (i,j) yang dapat mencapai (r,c) lainnya}$$
+![formula one](img/formulaOne.jpg)
+![formula two](img/formulaTwo.jpg)
 
 ## Cara Kompilasi Program
 
