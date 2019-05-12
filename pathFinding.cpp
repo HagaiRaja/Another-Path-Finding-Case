@@ -11,14 +11,16 @@ int waysTo[NMax][NMax];
 int N;  // N * N == sizeof(papanCatur)
 void waysFromCell(int papanCatur[NMax][NMax], int r, int c) {
     if (!(r >= N && c >= N)) {
-        for (int k = 0; k <= papanCatur[r][c]; k++) {
-            int num = papanCatur[r][c];
-            int row = r + k;
-            int col = c + num - k;
-            if (row <= N && col <= N) {
-                if (1 <= num && num <= (N - r) + (N - c)) {
-                    waysTo[row][col] += 1;
-                    waysFromCell(papanCatur, row, col);
+        if (papanCatur[r][c] > 0) {
+            for (int k = 0; k <= papanCatur[r][c]; k++) {
+                int num = papanCatur[r][c];
+                int row = r + k;
+                int col = c + num - k;
+                if (row <= N && col <= N) {
+                    if (1 <= num && num <= (N - r) + (N - c)) {
+                        waysTo[row][col] += 1;
+                        waysFromCell(papanCatur, row, col);
+                    }
                 }
             }
         }
