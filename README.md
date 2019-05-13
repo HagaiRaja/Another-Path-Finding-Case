@@ -105,13 +105,13 @@ Jika, dirumuskan, setiap isi dari waysTo[][] di isi dengan aturan berikut:
 ![formula one](img/formulaOne.jpg)
 ![formula two](img/formulaTwo.jpg)
 
-## Cara Kompilasi Program
+## Cara Menjalankan Program
+
+Silakan clone repo ini. Kemudian buka folder repo ini dan kompilasi dengan perintah berikut:
 
 ```
 g++ pathFinding.cpp -o pathFinding
 ```
-
-## Cara Menjalankan Program
 
 Di directory yang sama, terdapat beberapa file berisi contoh kasus dengan format **test[x].txt**. Misal, untuk menjalankan test case 1, masukkan perintah berikut:
 
@@ -119,7 +119,7 @@ Di directory yang sama, terdapat beberapa file berisi contoh kasus dengan format
 ./pathFinding test1.txt
 ```
 
-## Contoh kasus yang diujikan
+## Kasus Uji
 
 Test Case 0:
 
@@ -157,3 +157,9 @@ Test Case 9:
 ```
 
 ![test 9](img/test9.png)
+
+## Spesifikasi Mesin Pengujian
+- Laptop    : Acer Aspire E14 E5-475G-38LQ
+- CPU       : Intel Core i3-6006U(2.0GHz, 3MB L3 Cache)
+- VGA       : NVIDIA GeForce 940MX with 2GB Dedicated VRAM
+- RAM       : 4GB DDR4

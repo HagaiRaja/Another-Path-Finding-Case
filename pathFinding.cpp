@@ -9,26 +9,31 @@ const int NMax = 10000;
 int papanCatur[NMax][NMax];
 int waysTo[NMax][NMax];
 int N;  // N * N == sizeof(papanCatur)
-void waysFromCell(int papanCatur[NMax][NMax], int r, int c) {
-    if (!(r >= N && c >= N)) {
-        if (papanCatur[r][c] > 0) {
-            for (int k = 0; k <= papanCatur[r][c]; k++) {
-                int num = papanCatur[r][c];
-                int row = r + k;
-                int col = c + num - k;
-                if (row <= N && col <= N) {
-                    if (1 <= num && num <= (N - r) + (N - c)) {
-                        waysTo[row][col] += 1;
-                        waysFromCell(papanCatur, row, col);
+
+int pathFinding(int papanCatur[NMax][NMax]) {
+    queue<pair<int, int> > q;
+    q.push({1, 1});
+    while (!q.empty()) {
+        pair<int, int> currPoint = q.front();
+        q.pop();
+        int r = currPoint.first;
+        int c = currPoint.second;
+        if (!(r >= N && c >= N)) {
+            if (papanCatur[r][c] > 0) {
+                for (int k = 0; k <= papanCatur[r][c]; k++) {
+                    int num = papanCatur[r][c];
+                    int row = r + k;
+                    int col = c + num - k;
+                    if (row <= N && col <= N) {
+                        if (1 <= num && num <= (N - r) + (N - c)) {
+                            waysTo[row][col]++;
+                            q.push({row, col});
+                        }
                     }
                 }
             }
         }
     }
-}
-
-int pathFinding(int papanCatur[NMax][NMax]) {
-    waysFromCell(papanCatur, 1, 1);
     return waysTo[N][N];
 }
 
