@@ -12,6 +12,7 @@ Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 Untuk papan catur M dengan ukuran NxN, persoalan Dynamic Programming pada petak i,j dinotasikan sebagai pathFinding(i,j) di mana pathFinding adalah fungsi yang mengembalikan berapa banyak cara yang mungkin bisa mencapai titik N,N dari i,j.
 
 Secara matematis, persoalan ini dapat dirumuskan menjadi
+
 ![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/equation.jpg)
 
 ## Contoh Kasus Uji
@@ -24,6 +25,7 @@ Input :
 3 1 1 0
 ```
 Output:
+
 ![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/1.jpg)
 
 ### Contoh Kasus Uji 2
@@ -37,6 +39,7 @@ Input:
 3 1 1 0 1 0
 ```
 Output:
+
 ![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/2.jpg)
 
 ### Contoh Kasus Uji 3
@@ -53,6 +56,7 @@ Output:
 1 1 1 1 1 1 1 1 1 1
 ```
 Output:
+
 ![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/3.jpg)
 
 ### Contoh Kasus Uji 4
@@ -67,4 +71,10 @@ Output:
 3 2 0 4 3 1 2 2
 ```
 Output:
+
 ![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/4.jpg)
+
+## Spesifikasi Mesin
+- Linux Ubuntu 18.04
+- RAM 4 GB
+- intel CORE i5
