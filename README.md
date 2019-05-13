@@ -8,6 +8,12 @@ Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 4. Tujuan akhir adalah kotak (N, N) atau yang pojok kanan bawah.
 5. Bila bilangan terakhir adalah 0 dan bukan di pojok maka bidak berhenti (tidak dapat melanjutkan langkah kecuali kalau sudah mencapai tujuan).
 
+## Dynamic Programming Pada Kasus Path Finding
+Untuk papan catur M dengan ukuran NxN, persoalan Dynamic Programming pada petak i,j dinotasikan sebagai pathFinding(i,j) di mana pathFinding adalah fungsi yang mengembalikan berapa banyak cara yang mungkin bisa mencapai titik N,N dari i,j.
+
+Secara matematis, persoalan ini dapat dirumuskan menjadi
+![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/equation.jpg)
+
 ## Contoh Kasus Uji
 ### Contoh Kasus Uji 1 
 Input :
@@ -17,19 +23,8 @@ Input :
 1 2 3 1
 3 1 1 0
 ```
-Output :
-```
-6
-20ms
-```
-Penjelasan :
-jalur yang mungkin adalah
-1. [1][1] -> [2][2] -> [2][4] -> [4][4]
-2. [1][1] -> [3][1] -> [4][3] -> [4][4]
-3. [1][1] -> [3][1] -> [3][4] -> [4][4]
-4. [1][1] -> [1][3] -> [1][4] -> [4][4]
-5. [1][1] -> [1][3] -> [2][3] -> [3][4] -> [4][4]
-6. [1][1] -> [1][3] -> [2][3] -> [4][3] -> [4][4]
+Output:
+![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/1.jpg)
 
 ### Contoh Kasus Uji 2
 Input:
@@ -41,8 +36,30 @@ Input:
 1 2 1 3 1 3
 3 1 1 0 1 0
 ```
-Output :
+Output:
+![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/2.jpg)
+
+### Contoh Kasus Uji 3
 ```
-0
-1ms
+1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 1
 ```
+Output:
+![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/3.jpg)
+
+### Contoh Kasus Uji 4
+```
+3 0 1 4 0 3 2 1
+2 1 2 0 1 0 4 2
+1 0 1 3 3 2 1 2
+1 2 1 1 2 1 2 3
+0 3 2 1 1 3 3 0
+0 2 4 0 1 3 2 0
+1 2 0 1 3 2 0 4
+3 2 0 4 3 1 2 2
+```
+Output:
+![alt text](https://raw.githubusercontent.com/juniardiakbar/Another-Path-Finding-Case/master/pict/4.jpg)
