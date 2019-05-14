@@ -1,5 +1,4 @@
 # Dynamic Programming : Another Path Finding Case
-### **_(Ubah file README.md ini setelah program diselesaikan)_**
 
 ## Latar Belakang
 *Path Finding* adalah masalah yang berfokus untuk mencari langkah paling optimum untuk bergerak dari posisi asal ke posisi akhir dengan batasan-batasan (*constraints*) tertentu. Masalah ini dapat diselesaikan dengan mudah menggunakan pendekatan strategi algoritma *dynamic programming* seperti pada contoh berikut oleh  [GeeksForGeeks](https://www.geeksforgeeks.org/min-cost-path-dp-6/). Banyak penerapan yang memiliki fokus berbeda terkait topik *Path Finding* seperti pada robot, game, image processing serta pengelolahan efisien industri. Semua kasus ini berkutat dalam mengoptimasi dari sisi paling pendek, paling murah, paling cepat dan parameter lainnya. 
@@ -14,64 +13,28 @@ Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 4. Tujuan akhir adalah kotak (N, N) atau yang pojok kanan bawah.
 5. Bila bilangan terakhir adalah 0 dan bukan di pojok maka bidak berhenti (tidak dapat melanjutkan langkah kecuali kalau sudah mencapai tujuan).
 
-## Spesifikasi
-Lakukan fork terhadap repository ini.
+## Dasar Teori
+Pemrograman Dinamik (<i>Dynamic Programming</i>) yang biasa disebut DP merupakan suatu metode memecah persoalan kompleks menjadi kumpulan sub-persoalan, lalu hasil <i>solve</i> dari setiap sub-persoalan pada setiap tahapan disimpan pada suatu array, yang pada akhirnya akan dievaluasi untuk mendapatkan nilai paling optimum.
 
-Buatlah dalam bahasa pemrograman **_Python_** atau **_C++_**, sebuah fungsi dalam program berbasis CLI yang dapat menyelesaikan persoalan cerita diatas yang menghitung :
-1. Banyaknya cara yang mungkin untuk bisa mencapai tujuan akhir.
-2. Waktu yang digunakan untuk mencari semua solusi.
+## Langkah-langkah Path Finding
+<h3><b>Dynamic Programming: Penggunaan <i>Memoization</i> dengan pendekatan <i>Bottom Up</i></b></h3>
+1. Membuat <i><b>matrix of boolean</b></i> yang berisikan <b>True</b> apabila dari poin itu, dapat melakukan gerakan ke poin (N,N).
+2. Untuk mencari path dari suatu poin ke poin lainnya, digunakan algoritma DFS.
+3. Dari matrix of boolean yang sudah dibuat di atas, dihitung total path yang mungkin terjadi dari titik mulai hingga titik akhir.
+4. Total path yang mungkin terjadi dicek secara rekursif, ,<b>terbagi menjadi 3 kasus besar</b>.
+    - Apabila sampai ke titik akhir, return 1.
+    - Apabila sampai ke titik yang bernilai False, return 0.
+    - Apabila tidak sampai titik akhir, namun bernilai True, return jumlah semua path yang bisa dilakukan dari titik tersebut menuju ke titik akhir.
 
-Deklarasi fungsi :
-```C++
-int pathFinding(papanCatur);
-```
-Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
-
-**Setelah program dan laporan pada Readme.md anda sudah selesai, lakukan pull request kembali pada branch ini.**
-
-## Contoh Kasus Uji
-### Contoh Kasus Uji 1 
-Input :
-```
-2 3 3 1
-1 2 1 3
-1 2 3 1
-3 1 1 0
-```
-Output :
-```
-6
-20ms
-```
-Penjelasan :
-jalur yang mungkin adalah
-1. [1][1] -> [2][2] -> [2][4] -> [4][4]
-2. [1][1] -> [3][1] -> [4][3] -> [4][4]
-3. [1][1] -> [3][1] -> [3][4] -> [4][4]
-4. [1][1] -> [1][3] -> [1][4] -> [4][4]
-5. [1][1] -> [1][3] -> [2][3] -> [3][4] -> [4][4]
-6. [1][1] -> [1][3] -> [2][3] -> [4][3] -> [4][4]
-
-### Contoh Kasus Uji 2
-Input:
-```
-2 3 0 1 3 1
-1 0 1 3 1 3
-0 2 3 1 3 1
-3 1 1 0 1 0
-1 2 1 3 1 3
-3 1 1 0 1 0
-```
-Output :
-```
-0
-1ms
-```
-
-## Penilaian
-- Kebenaran keluaran fungsi - 40%
-- Pemahaman tentang dynamic programming dan path finding (jelaskan langkah yang digunakan secara singkat) - 30%
-- Kecepatan eksekusi program (lampirkan screenshot pada readme beserta spesifikasi mesin yang dipakai untuk testing) - 20%
-- Kecepatan Pull Request - 10%
-
-Nilai maksimum yang bisa didapatkan adalah **700** poin. _(Tujuh Ratus)_
+## Screenshot Contoh Kasus Uji
+Program dijalankan dan dites pada laptop dengan spesifikasi:<br>
+CPU     : Intel Core i5 5200U @ 2.20 GHz<br>
+GPU     : NVIDIA GeForce 940M<br>
+RAM     : 8 GB<br>
+OS      : Windows 10, 64-bit<br>
+<br>
+Berikut adalah screenshot dari 2 testcase yang ada pada spesifikasi soal:<br>
+TC1:<br>
+![gmbr1](test/gmbr1.jpg)<br>
+TC2:<br>
+![gmbr2](test/gmbr2.jpg)<br>
