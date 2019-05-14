@@ -18,13 +18,13 @@ Pemrograman Dinamik (<i>Dynamic Programming</i>) yang biasa disebut DP merupakan
 
 ## Langkah-langkah Path Finding
 <h3><b>Dynamic Programming: Penggunaan <i>Memoization</i> dengan pendekatan <i>Bottom Up</i></b></h3>
-1. Membuat <i><b>matrix of boolean</b></i> yang berisikan <b>True</b> apabila dari poin itu, dapat melakukan gerakan ke poin (N,N).
-2. Untuk mencari path dari suatu poin ke poin lainnya, digunakan algoritma DFS.
-3. Dari matrix of boolean yang sudah dibuat di atas, dihitung total path yang mungkin terjadi dari titik mulai hingga titik akhir.
-4. Total path yang mungkin terjadi dicek secara rekursif, ,<b>terbagi menjadi 3 kasus besar</b>.
-    - Apabila sampai ke titik akhir, return 1.
-    - Apabila sampai ke titik yang bernilai False, return 0.
-    - Apabila tidak sampai titik akhir, namun bernilai True, return jumlah semua path yang bisa dilakukan dari titik tersebut menuju ke titik akhir.
+1. Membuat <i><b>matrix of boolean</b></i> yang berisikan <b>True</b> apabila dari poin itu, dapat melakukan gerakan ke poin (N,N).<br>
+2. Untuk mencari path dari suatu poin ke poin lainnya, digunakan algoritma DFS.<br>
+3. Dari matrix of boolean yang sudah dibuat di atas, dihitung total path yang mungkin terjadi dari titik mulai hingga titik akhir.<br>
+4. Total path yang mungkin terjadi dicek secara rekursif, ,<b>terbagi menjadi 3 kasus besar</b>.<br>
+    - Apabila sampai ke titik akhir, return 1.<br>
+    - Apabila sampai ke titik yang bernilai False, return 0.<br>
+    - Apabila tidak sampai titik akhir, namun bernilai True, return jumlah semua path yang bisa dilakukan dari titik tersebut menuju ke titik akhir.<br>
 
 ## Screenshot Contoh Kasus Uji
 Program dijalankan dan dites pada laptop dengan spesifikasi:<br>
@@ -35,6 +35,6 @@ OS      : Windows 10, 64-bit<br>
 <br>
 Berikut adalah screenshot dari 2 testcase yang ada pada spesifikasi soal:<br>
 TC1:<br>
-![gmbr1](test/gmbr1.jpg)<br>
+![gmbr1](Test/gmbr1.jpg)<br>
 TC2:<br>
-![gmbr2](test/gmbr2.jpg)<br>
+![gmbr2](Test/gmbr2.jpg)<br>
