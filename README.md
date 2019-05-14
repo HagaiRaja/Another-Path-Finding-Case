@@ -80,7 +80,7 @@ Nama : M. Khairul Makirin
 NIM : 13517088
 
 ### Penjelasan
-Dalam mencari berapa banyak solusi dari suatu point, bisa dicari dengan menyimpan berapa banyak jalur yang dapat dilewati dari suatu point ke point tujuan, sehingga tidak harus meng-expand simpul/point yang sudah sebelumnya di-expand mis.
+Dalam mencari berapa banyak solusi dari suatu point, bisa dicari dengan menyimpan berapa banyak jalur yang dapat dilewati dari suatu point ke point tujuan, sehingga tidak harus meng-expand simpul/point yang sudah sebelumnya di-expand (metode memoization) mis.
 ```
 1 1
 1 0
