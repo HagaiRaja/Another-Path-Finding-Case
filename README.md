@@ -1,5 +1,4 @@
 # Dynamic Programming : Another Path Finding Case
-### **_(Ubah file README.md ini setelah program diselesaikan)_**
 
 ## Latar Belakang
 *Path Finding* adalah masalah yang berfokus untuk mencari langkah paling optimum untuk bergerak dari posisi asal ke posisi akhir dengan batasan-batasan (*constraints*) tertentu. Masalah ini dapat diselesaikan dengan mudah menggunakan pendekatan strategi algoritma *dynamic programming* seperti pada contoh berikut oleh  [GeeksForGeeks](https://www.geeksforgeeks.org/min-cost-path-dp-6/). Banyak penerapan yang memiliki fokus berbeda terkait topik *Path Finding* seperti pada robot, game, image processing serta pengelolahan efisien industri. Semua kasus ini berkutat dalam mengoptimasi dari sisi paling pendek, paling murah, paling cepat dan parameter lainnya. 
@@ -13,7 +12,7 @@ Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 3. Berikutnya secara berulang bidak dapat dipindahkan (1) horizontal ke kanan, atau (2) vertikal ke bawah sekian kotak sebanyak dengan bilangan pada kotak terakhir bidak itu berada, kecuali kalau membawa bidak keluar dari papan.
 4. Tujuan akhir adalah kotak (N, N) atau yang pojok kanan bawah.
 5. Bila bilangan terakhir adalah 0 dan bukan di pojok maka bidak berhenti (tidak dapat melanjutkan langkah kecuali kalau sudah mencapai tujuan).
-
+1
 ## Spesifikasi
 Lakukan fork terhadap repository ini.
 
@@ -27,10 +26,70 @@ int pathFinding(papanCatur);
 ```
 Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
 
-**Setelah program dan laporan pada Readme.md anda sudah selesai, lakukan pull request kembali pada branch ini.**
+## Strategi Penyelesaian dengan Dynamic Programming (DP)
+Persoalan ini dapat diselesaikan dengan menggunakan dynamic programming. State persoalan ini adalah indeks baris dan kolom yang ada pada papan catur. Kita lalu bisa mendefinisikan **_ways[i][j]_** sebagai banyaknya jalan dari kotak (1, 1) menuju kotak (i, j) dengan aturan yang sudah dijelaskan sebelumnya di atas. 
 
-## Contoh Kasus Uji
-### Contoh Kasus Uji 1 
+Untuk mengimplementasikan dynamic programming ini, kita dapat melakukannya dengan teknik bottom-up, yaitu melakukan perhitungan berdasarkan kasus kecil yang kecil (base case) menuju kasus yang lebih besar. Adapun base case dan relasi antar fungsi yang digunakan adalah sebagai berikut
+
+### Base case
+<a href="https://www.codecogs.com/eqnedit.php?latex=ways[1][1]&space;=&space;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[1][1]&space;=&space;1" title="ways[1][1] = 1" /></a>
+
+Obvious, banyak jalan dari kotak (1, 1) ke (1, 1) adalah 1 cara.
+
+### Recurrence
+<a href="https://www.codecogs.com/eqnedit.php?latex=ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" title="ways[i][j] = \sum_{x, y}ways[x][y]" /></a>
+
+Dimana _(x, y)_ adalah suatu kotak yang ada papan catur yang memiliki total perpindahan menuju kotak _(i, j)_
+ (secara vertikal dan horizontal) sebesar nilai pada kotak _(x, y)_ i.e (terdapat suatu bilangan bulat non-negatif _k_ , dimana _x+k_ = _i_ dan _y+kotak[x][y]-k_ = _j_ dengan _kotak[x][y]_ adalah bilangan yang ada pada kotak _(x, y)_)
+
+Proses implementasi dengan bottom-up akan dilakukan dengan iterasi tiap kotak yang ada pada papan catur, lalu melakukan update nilai **_ways[i][j]_** sesuai dengan nilai pada tabel **_ways[][]_** yang sudah didapat sebelumnya.
+
+## Cara Menjalankan
+Untuk menjalankan program ini, pastikan terdapat compiler `g++` yang sudah terpasang. 
+
+Untuk melakukan kompilasi pada program, kita dapat melakukannya melalui terminal dengan cara:
+```cmd
+g++ PathFinding.cpp -o PathFinding
+```
+
+Setelah proses kompilasi, untuk menjalankan program ini kita dapat melakukannya dengan cara:
+```cmd
+PathFinding
+```
+Pada sistem operasi windows.
+
+atau
+```cmd
+./PathFinding
+```
+pada sistem operasi linux.
+
+Perlu diperhatikan bahwa dengan cara seperti ini, masukan untuk program akan berhenti ketika pengguna menekan **CTRL + D**. Oleh karena itu, pastikan input harus **valid**.
+
+Untuk menjalankan program dengan input menggunakan file eksternal (contoh file: tc-1.in), dapat dilakukan dengan cara:
+
+```cmd
+PathFinding < tc-1.in
+```
+pada sistem operasi windows.
+
+atau
+```cmd
+./PathFinding < tc-1.in
+```
+pada sistem operasi linux
+
+## Spesifikasi Mesin
+Dalam melakukan pembuatan, pengembangan dan pengujian program, spesifikasi mesin yang digunakan adalah sebagai berikut:
+
+* System Manufacture	: Hewlett-Packard
+* System Model		: HP Notebook
+* Processor		: Intel(R) Core(TM)i5-5200U CPU @ 2.20GHz (4 CPus), ~2.2GHz
+* Operating System	: Ubuntu 16.04
+* Memory		: 4096 GB RAM
+
+## Pengujian
+### Kasus Uji 1 
 Input :
 ```
 2 3 3 1
@@ -41,18 +100,13 @@ Input :
 Output :
 ```
 6
-20ms
+0.100 ms
 ```
-Penjelasan :
-jalur yang mungkin adalah
-1. [1][1] -> [2][2] -> [2][4] -> [4][4]
-2. [1][1] -> [3][1] -> [4][3] -> [4][4]
-3. [1][1] -> [3][1] -> [3][4] -> [4][4]
-4. [1][1] -> [1][3] -> [1][4] -> [4][4]
-5. [1][1] -> [1][3] -> [2][3] -> [3][4] -> [4][4]
-6. [1][1] -> [1][3] -> [2][3] -> [4][3] -> [4][4]
+Screenshot:
 
-### Contoh Kasus Uji 2
+<img src="image/tc-1.png" width="750" height="500"/> <br/>
+
+### Kasus Uji 2
 Input:
 ```
 2 3 0 1 3 1
@@ -65,13 +119,100 @@ Input:
 Output :
 ```
 0
-1ms
+0.082 ms
 ```
+Screenshot:
 
-## Penilaian
-- Kebenaran keluaran fungsi - 40%
-- Pemahaman tentang dynamic programming dan path finding (jelaskan langkah yang digunakan secara singkat) - 30%
-- Kecepatan eksekusi program (lampirkan screenshot pada readme beserta spesifikasi mesin yang dipakai untuk testing) - 20%
-- Kecepatan Pull Request - 10%
+<img src="image/tc-2.png" width="750" height="500"/> <br/>
 
-Nilai maksimum yang bisa didapatkan adalah **700** poin. _(Tujuh Ratus)_
+## Kasus Uji 3
+Input:
+```
+1 1 1 1 1
+2 1 2 1 1
+1 1 1 1 1
+2 1 2 1 1
+2 2 2 2 0
+```
+Output:
+```
+25
+0.056 ms
+```
+Screenshot:
+
+<img src="image/tc-3.png" width="750" height="500"/> <br/>
+
+## Kasus Uji 4
+Input:
+```
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+```
+Output:
+```
+40116600
+0.140 ms
+```
+Screenshot:
+
+<img src="image/tc-4.png" width="750" height="500"/> <br/>
+
+## Kasus Uji 5
+Input:
+```
+1 1 2 3 1 1 1 1 1 0
+0 1 1 2 1 10 1 1 1 0
+1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 1 1
+1 1 1 2 1 2 3 1 2 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+```
+Output:
+```
+100
+0.167 ms
+```
+Screenshot:
+
+<img src="image/tc-5.png" width="750" height="500"/> <br/>
+
+## Kasus Uji 6
+Input:
+```
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+```
+Output:
+```
+0
+0.160 ms
+```
+Screenshot:
+
+<img src="image/tc-6.png" width="750" height="500"/> <br/>
