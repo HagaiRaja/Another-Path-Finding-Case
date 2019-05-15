@@ -1,5 +1,5 @@
 /* Nim / Nama : 13517078 / Irfan Sofyana Putra
-   Nama File  : main.cpp
+   Nama File  : PathFinding.cpp
    Deskripsi  : program untuk mencari solusi dari permasalahan path finding 
 */
 
@@ -16,9 +16,11 @@ vector<vector<int> > ways; /*tabel dp*/
 vector<vector<int> > chessBoard; /*papan catur */
 
 
-/*mendapatkan input dari pengguna*/
+/*mendapatkan input (papan catur) */
 void getInput(){
-    freopen("input.txt", "r", stdin);
+    // freopen("tc-6.in", "r", stdin);
+    // freopen("tc-6.out", "w", stdout);
+    
     int dummy;
     vector<int> tmpInput;
     //ukuran tidak diketahui, masukkan ke variabel sementara saja
@@ -54,9 +56,9 @@ int pathFinding(vector<vector<int> > chessBoard){
         }
         ways.push_back(tmp);
     }
-    ways[0][0] = 1;
     
     /*melakukan dynamic programming secara bottom up*/
+    ways[0][0] = 1;
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
             if (chessBoard[i][j] > 0){
@@ -88,6 +90,7 @@ void Solve(){
 }
 
 int main(){
+    //memanggil prosedur penyelesaian masalah
     Solve();
     return 0;
 }
