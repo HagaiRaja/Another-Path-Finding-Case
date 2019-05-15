@@ -102,7 +102,8 @@ Output :
 20 ms
 ```
 Screenshot:
-<img src="image/tc-1.png" width="300" height="150" /> <br />
+
+<img src="image/tc-1.png" width="300" height="300" /> <br />
 
 ### Kasus Uji 2
 Input:
@@ -120,7 +121,8 @@ Output :
 1 ms
 ```
 Screenshot:
-<img src="image/tc-2.png" width="300" height="150" /> <br />
+
+<img src="image/tc-2.png" width="300" height="300" /> <br />
 
 ## Kasus Uji 3
 Input:
@@ -137,5 +139,6 @@ Output:
 0.056 ms
 ```
 Screenshot:
-<img src="image/tc-3.png" width="300" height="150" /> <br />
+
+<img src="image/tc-3.png" width="300" height="300" /> <br />
 
