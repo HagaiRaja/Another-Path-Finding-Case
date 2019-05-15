@@ -1,5 +1,4 @@
 # Dynamic Programming : Another Path Finding Case
-### **_(Ubah file README.md ini setelah program diselesaikan)_**
 
 ## Latar Belakang
 *Path Finding* adalah masalah yang berfokus untuk mencari langkah paling optimum untuk bergerak dari posisi asal ke posisi akhir dengan batasan-batasan (*constraints*) tertentu. Masalah ini dapat diselesaikan dengan mudah menggunakan pendekatan strategi algoritma *dynamic programming* seperti pada contoh berikut oleh  [GeeksForGeeks](https://www.geeksforgeeks.org/min-cost-path-dp-6/). Banyak penerapan yang memiliki fokus berbeda terkait topik *Path Finding* seperti pada robot, game, image processing serta pengelolahan efisien industri. Semua kasus ini berkutat dalam mengoptimasi dari sisi paling pendek, paling murah, paling cepat dan parameter lainnya. 
@@ -13,7 +12,7 @@ Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 3. Berikutnya secara berulang bidak dapat dipindahkan (1) horizontal ke kanan, atau (2) vertikal ke bawah sekian kotak sebanyak dengan bilangan pada kotak terakhir bidak itu berada, kecuali kalau membawa bidak keluar dari papan.
 4. Tujuan akhir adalah kotak (N, N) atau yang pojok kanan bawah.
 5. Bila bilangan terakhir adalah 0 dan bukan di pojok maka bidak berhenti (tidak dapat melanjutkan langkah kecuali kalau sudah mencapai tujuan).
-
+1
 ## Spesifikasi
 Lakukan fork terhadap repository ini.
 
@@ -27,7 +26,17 @@ int pathFinding(papanCatur);
 ```
 Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
 
-**Setelah program dan laporan pada Readme.md anda sudah selesai, lakukan pull request kembali pada branch ini.**
+## Strategi Penyelesaian dengan Dynamic Programming (DP)
+Persoalan ini dapat diselesaikan dengan menggunakan dynamic programming. State persoalan ini adalah indeks baris dan kolom yang ada pada papan catur. Kita lalu bisa mendefinisikan ways[i][j] sebagai banyaknya jalan dari petak (1, 1) menuju petak (i, j) dengan aturan yang sudah dijelaskan sebelumnya di atas. 
+
+Untuk mengimplementasikan dynamic programming ini, kita dapat melakukannya dengan teknik bottom-up, yaitu melakukan perhitungan berdasarkan kasus kecil yang kecil (base case) menuju kasus yang lebih besar. Adapun base case dan relasi antar fungsi yang digunakan adalah sebagai berikut
+
+## Base case
+ways[1][1] = 1
+Obviuos, banyak jalan dari petak (1, 1) ke (1, 1) adalah 1 cara.
+
+## Recurrence
+ways[i][j] = \sum_{x,y} ways[x][y]
 
 ## Contoh Kasus Uji
 ### Contoh Kasus Uji 1 
@@ -68,10 +77,3 @@ Output :
 1ms
 ```
 
-## Penilaian
-- Kebenaran keluaran fungsi - 40%
-- Pemahaman tentang dynamic programming dan path finding (jelaskan langkah yang digunakan secara singkat) - 30%
-- Kecepatan eksekusi program (lampirkan screenshot pada readme beserta spesifikasi mesin yang dipakai untuk testing) - 20%
-- Kecepatan Pull Request - 10%
-
-Nilai maksimum yang bisa didapatkan adalah **700** poin. _(Tujuh Ratus)_
