@@ -37,7 +37,8 @@ ways[1][1] = 1
 Obviuos, banyak jalan dari petak (1, 1) ke (1, 1) adalah 1 cara.
 
 ## Recurrence
-<img src="https://latex.codecogs.com/gif.latex?dp_%7Bx%2C%20y%7D%3D%5Csum_%7Bi%2C%20j%7D%20dp_%7Bi%2C%20j%7D">
+<a href="https://www.codecogs.com/eqnedit.php?latex=ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" title="ways[i][j] = \sum_{x, y}ways[x][y]" /></a>
+
 
 ## Contoh Kasus Uji
 ### Contoh Kasus Uji 1 
