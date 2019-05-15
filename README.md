@@ -31,18 +31,39 @@ Persoalan ini dapat diselesaikan dengan menggunakan dynamic programming. State p
 
 Untuk mengimplementasikan dynamic programming ini, kita dapat melakukannya dengan teknik bottom-up, yaitu melakukan perhitungan berdasarkan kasus kecil yang kecil (base case) menuju kasus yang lebih besar. Adapun base case dan relasi antar fungsi yang digunakan adalah sebagai berikut
 
-## Base case
+### Base case
 <a href="https://www.codecogs.com/eqnedit.php?latex=ways[1][1]&space;=&space;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[1][1]&space;=&space;1" title="ways[1][1] = 1" /></a>
 
 Obvious, banyak jalan dari kotak (1, 1) ke (1, 1) adalah 1 cara.
 
-## Recurrence
+### Recurrence
 <a href="https://www.codecogs.com/eqnedit.php?latex=ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" title="ways[i][j] = \sum_{x, y}ways[x][y]" /></a>
 
-Dimana (x, y) adalah suatu kotak yang ada papan catur yang memiliki total perpindahan menuju kotak (i, j) (secara vertikal dan horizontal) sebesar nilai pada kotak(x, y) i.e (terdapat suatu bilangan k, dimana x+k = i dan y+kotak[x][y]-k = j dengan kotak[x][y] adalah bilangan yang ada pada kotak (x, y))
+Dimana (x, y) adalah suatu kotak yang ada papan catur yang memiliki total perpindahan menuju kotak (i, j) (secara vertikal dan horizontal) sebesar nilai pada kotak(x, y) i.e (terdapat suatu bilangan bulat non-negatif k, dimana x+k = i dan y+kotak[x][y]-k = j dengan kotak[x][y] adalah bilangan yang ada pada kotak (x, y))
 
-## Contoh Kasus Uji
-### Contoh Kasus Uji 1 
+Proses implementasi dengan bottom-up akan dilakukan dengan iterasi tiap kotak yang ada pada papan catur, lalu melakukan update nilai ways[i][j] sesuai dengan nilai pada tabel ways[][] yang sudah didapat sebelumnya.
+
+## Cara Menjalankan
+Untuk menjalankan program ini, pastikan terdapat compiler `g++` yang sudah terpasang. 
+
+Untuk melakukan kompilasi pada program, kita dapat melakukannya melalui terminal dengan cara:
+```cmd
+g++ PathFinding.cpp -o PathFinding
+```
+
+Setelah proses kompilasi, untuk menjalankan program ini kita dapat melakukannya dengan cara:
+```cmd
+PathFinding
+```
+Perlu diperhatikan bahwa dengan cara seperti ini, masukan untuk program akan berhenti ketika pengguna menekan **CTRL + D**. Oleh karena itu, pastikan input harus **valid**.
+
+Untuk menjalankan program dengan input menggunakan file eksternal (contoh file: tc-1.in), dapat dilakukan dengan cara:
+```cmd
+./PathFinding < tc-1.in
+```
+
+## Pengujian
+### Kasus Uji 1 
 Input :
 ```
 2 3 3 1
@@ -55,16 +76,7 @@ Output :
 6
 20ms
 ```
-Penjelasan :
-jalur yang mungkin adalah
-1. [1][1] -> [2][2] -> [2][4] -> [4][4]
-2. [1][1] -> [3][1] -> [4][3] -> [4][4]
-3. [1][1] -> [3][1] -> [3][4] -> [4][4]
-4. [1][1] -> [1][3] -> [1][4] -> [4][4]
-5. [1][1] -> [1][3] -> [2][3] -> [3][4] -> [4][4]
-6. [1][1] -> [1][3] -> [2][3] -> [4][3] -> [4][4]
-
-### Contoh Kasus Uji 2
+### Kasus Uji 2
 Input:
 ```
 2 3 0 1 3 1
