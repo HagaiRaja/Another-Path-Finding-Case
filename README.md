@@ -103,7 +103,7 @@ Output :
 ```
 Screenshot:
 
-<img src="image/tc-1.png" width="300" height="300" /> <br />
+<img src="image/tc-1.png" width="500" height="500" /> <br />
 
 ### Kasus Uji 2
 Input:
@@ -140,5 +140,5 @@ Output:
 ```
 Screenshot:
 
-<img src="image/tc-3.png" width="300" height="300" /> <br />
+<img src="image/tc-3.png" width="300" height="300	" /> <br />
 
