@@ -39,6 +39,7 @@ Program dijalankan dan dites pada laptop dengan spesifikasi:<br>
         <td>OS</td><td>Windows 10, 64-bit</td>
     </tr>
 </table><br>
+
 Berikut adalah screenshot dari 2 testcase yang ada pada spesifikasi soal:<br>
 TC1:<br>
 ![gambarTestCase1](Test/gmbr1.jpg)<br>
@@ -46,7 +47,7 @@ TC2:<br>
 ![gambarTestCase2](Test/gmbr2.jpg)<br>
 
 Dibuat oleh:<br>
-<table border = 1>
+<table border = 0>
     <tr>
         <td>Nama</td><td>Leonardo</td>
     </tr><tr>
