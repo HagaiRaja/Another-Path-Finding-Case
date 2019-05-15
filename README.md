@@ -27,18 +27,19 @@ int pathFinding(papanCatur);
 Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
 
 ## Strategi Penyelesaian dengan Dynamic Programming (DP)
-Persoalan ini dapat diselesaikan dengan menggunakan dynamic programming. State persoalan ini adalah indeks baris dan kolom yang ada pada papan catur. Kita lalu bisa mendefinisikan ways[i][j] sebagai banyaknya jalan dari petak (1, 1) menuju petak (i, j) dengan aturan yang sudah dijelaskan sebelumnya di atas. 
+Persoalan ini dapat diselesaikan dengan menggunakan dynamic programming. State persoalan ini adalah indeks baris dan kolom yang ada pada papan catur. Kita lalu bisa mendefinisikan ways[i][j] sebagai banyaknya jalan dari kotak (1, 1) menuju kotak (i, j) dengan aturan yang sudah dijelaskan sebelumnya di atas. 
 
 Untuk mengimplementasikan dynamic programming ini, kita dapat melakukannya dengan teknik bottom-up, yaitu melakukan perhitungan berdasarkan kasus kecil yang kecil (base case) menuju kasus yang lebih besar. Adapun base case dan relasi antar fungsi yang digunakan adalah sebagai berikut
 
 ## Base case
-ways[1][1] = 1
+<a href="https://www.codecogs.com/eqnedit.php?latex=ways[1][1]&space;=&space;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[1][1]&space;=&space;1" title="ways[1][1] = 1" /></a>
 
-Obviuos, banyak jalan dari petak (1, 1) ke (1, 1) adalah 1 cara.
+Obvious, banyak jalan dari kotak (1, 1) ke (1, 1) adalah 1 cara.
 
 ## Recurrence
 <a href="https://www.codecogs.com/eqnedit.php?latex=ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" title="ways[i][j] = \sum_{x, y}ways[x][y]" /></a>
 
+Dimana (x, y) adalah suatu kotak yang ada papan catur yang memiliki total perpindahan menuju kotak (i, j) (secara vertikal dan horizontal) sebesar nilai pada kotak(x, y) i.e (terdapat suatu bilangan k, dimana x+k = i dan y+kotak[x][y]-k = j dengan kotak[x][y] adalah bilangan yang ada pada kotak (x, y))
 
 ## Contoh Kasus Uji
 ### Contoh Kasus Uji 1 
