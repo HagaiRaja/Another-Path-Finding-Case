@@ -28,13 +28,28 @@ Pemrograman Dinamik (<i>Dynamic Programming</i>) yang biasa disebut DP merupakan
 
 ## Screenshot Contoh Kasus Uji
 Program dijalankan dan dites pada laptop dengan spesifikasi:<br>
-CPU     : Intel Core i5 5200U @ 2.20 GHz<br>
-GPU     : NVIDIA GeForce 940M<br>
-RAM     : 8 GB<br>
-OS      : Windows 10, 64-bit<br>
-<br>
+<table>
+    <tr>
+        <td>CPU</td><td>Intel Core i5 5200U @ 2.20 GHz</td>
+    </tr><tr>
+        <td>GPU</td><td>NVIDIA GeForce 940M</td>
+    </tr><tr>
+        <td>RAM</td><td>8 GB</td>
+    </tr><tr>
+        <td>OS</td><td>Windows 10, 64-bit</td>
+    </tr>
+</table><br>
 Berikut adalah screenshot dari 2 testcase yang ada pada spesifikasi soal:<br>
 TC1:<br>
-![gmbr1](Test/gmbr1.jpg)<br>
+![gambarTestCase1](Test/gmbr1.jpg)<br>
 TC2:<br>
-![gmbr2](Test/gmbr2.jpg)<br>
+![gambarTestCase2](Test/gmbr2.jpg)<br>
+
+Dibuat oleh:<br>
+<table border = 1>
+    <tr>
+        <td>Nama</td><td>Leonardo</td>
+    </tr><tr>
+        <td>NIM</td><td>13517048</td>
+    </tr>
+</table>

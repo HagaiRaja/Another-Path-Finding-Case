@@ -58,7 +58,7 @@ def getFinalPoints(matrix_of_boolean):
 def DPAlgorithm(matrix_of_input, matrix_of_boolean, total_move):
     #DYNAMIC PROGRAMMING: memoization dengan pendekatan bottom up
     mat_len = len(matrix_of_boolean)
-    #mengisi matrix of boolean
+    #Mengisi matrix of boolean
     finalPoints2 = getFinalPoints(matrix_of_boolean)
     while (True):
         finalPoints = finalPoints2
@@ -68,12 +68,12 @@ def DPAlgorithm(matrix_of_input, matrix_of_boolean, total_move):
                 moves = matrix_of_input[i][j]
                 for truePoint in finalPoints:
                     DFS(matrix_of_input, matrix_of_boolean, initialPoint, initialPoint, truePoint, moves, total_move)
-        
+                
         #printMatrix(matrix_of_boolean)
         finalPoints2 = getFinalPoints(matrix_of_boolean)
         if (finalPoints == finalPoints2):
             break
-
+    
     total_move = list(filter((([[mat_len-1, mat_len-1], [mat_len-1, mat_len-1]]).__ne__), total_move))
     return countTotal(total_move, [0,0], [mat_len-1, mat_len-1], matrix_of_boolean)
 
