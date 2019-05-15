@@ -2,7 +2,6 @@
    Nama File  : PathFinding.cpp
    Deskripsi  : program untuk mencari solusi dari permasalahan path finding 
 */
-
 #include <cstdio>
 #include <vector>
 #include <cmath>
@@ -18,9 +17,6 @@ vector<vector<int> > chessBoard; /*papan catur */
 
 /*mendapatkan input (papan catur) */
 void getInput(){
-    // freopen("tc-6.in", "r", stdin);
-    // freopen("tc-6.out", "w", stdout);
-    
     int dummy;
     vector<int> tmpInput;
     //ukuran tidak diketahui, masukkan ke variabel sementara saja
