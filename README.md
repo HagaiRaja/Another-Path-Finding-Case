@@ -55,12 +55,28 @@ Setelah proses kompilasi, untuk menjalankan program ini kita dapat melakukannya 
 ```cmd
 PathFinding
 ```
+Pada sistem operasi windows.
+
+atau
+```cmd
+./PathFinding
+```
+pada sistem operasi linux.
+
 Perlu diperhatikan bahwa dengan cara seperti ini, masukan untuk program akan berhenti ketika pengguna menekan **CTRL + D**. Oleh karena itu, pastikan input harus **valid**.
 
 Untuk menjalankan program dengan input menggunakan file eksternal (contoh file: tc-1.in), dapat dilakukan dengan cara:
+
+```cmd
+PathFinding < tc-1.in
+```
+pada sistem operasi windows.
+
+atau
 ```cmd
 ./PathFinding < tc-1.in
 ```
+pada sistem operasi linux
 
 ## Pengujian
 ### Kasus Uji 1 
