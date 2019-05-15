@@ -9,28 +9,27 @@ point yang sudah dikunjungi
  """
 
 def RecursiveDP(currPoint, goalPoint, pointSolution, matriks):
-    if currPoint not in pointSolution:
-        pointSolution[currPoint] = 0
+    pointSolution[currPoint] = 0
 
-        bottomNumber = matriks[currPoint[0]][currPoint[1]]
+    bottomNumber = matriks[currPoint[0]][currPoint[1]]
 
-        if bottomNumber > 0:
-            nextPoints = []
+    if bottomNumber > 0:
+        nextPoints = []
 
-            for i in range(bottomNumber+1):
-                nextPointRow = currPoint[0] + i
-                nextPointCol = currPoint[1] + bottomNumber - i
+        for i in range(bottomNumber+1):
+            nextPointRow = currPoint[0] + i
+            nextPointCol = currPoint[1] + bottomNumber - i
 
-                if nextPointRow < matriks.shape[0] and nextPointCol < matriks.shape[1]:
-                    nextPoints += [(nextPointRow, nextPointCol)]
+            if nextPointRow < matriks.shape[0] and nextPointCol < matriks.shape[1]:
+                nextPoints += [(nextPointRow, nextPointCol)]
 
-            for point in nextPoints:
-                if point == goalPoint:
-                    pointSolution[currPoint] += 1
-                elif point in pointSolution:
-                    pointSolution[currPoint] += pointSolution[point]
-                else:
-                    RecursiveDP(point, goalPoint, pointSolution, matriks)
+        for point in nextPoints:
+            if point == goalPoint:
+                pointSolution[currPoint] += 1
+            elif point in pointSolution:
+                pointSolution[currPoint] += pointSolution[point]
+            else:
+                RecursiveDP(point, goalPoint, pointSolution, matriks)
                 
 def main():
     ##Memulai timer
