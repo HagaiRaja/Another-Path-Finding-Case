@@ -27,7 +27,7 @@ int pathFinding(papanCatur);
 Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
 
 ## Strategi Penyelesaian dengan Dynamic Programming (DP)
-Persoalan ini dapat diselesaikan dengan menggunakan dynamic programming. State persoalan ini adalah indeks baris dan kolom yang ada pada papan catur. Kita lalu bisa mendefinisikan ways[i][j] sebagai banyaknya jalan dari kotak (1, 1) menuju kotak (i, j) dengan aturan yang sudah dijelaskan sebelumnya di atas. 
+Persoalan ini dapat diselesaikan dengan menggunakan dynamic programming. State persoalan ini adalah indeks baris dan kolom yang ada pada papan catur. Kita lalu bisa mendefinisikan **_ways[i][j]_** sebagai banyaknya jalan dari kotak (1, 1) menuju kotak (i, j) dengan aturan yang sudah dijelaskan sebelumnya di atas. 
 
 Untuk mengimplementasikan dynamic programming ini, kita dapat melakukannya dengan teknik bottom-up, yaitu melakukan perhitungan berdasarkan kasus kecil yang kecil (base case) menuju kasus yang lebih besar. Adapun base case dan relasi antar fungsi yang digunakan adalah sebagai berikut
 
@@ -39,9 +39,10 @@ Obvious, banyak jalan dari kotak (1, 1) ke (1, 1) adalah 1 cara.
 ### Recurrence
 <a href="https://www.codecogs.com/eqnedit.php?latex=ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?ways[i][j]&space;=&space;\sum_{x,&space;y}ways[x][y]" title="ways[i][j] = \sum_{x, y}ways[x][y]" /></a>
 
-Dimana (x, y) adalah suatu kotak yang ada papan catur yang memiliki total perpindahan menuju kotak (i, j) (secara vertikal dan horizontal) sebesar nilai pada kotak(x, y) i.e (terdapat suatu bilangan bulat non-negatif k, dimana x+k = i dan y+kotak[x][y]-k = j dengan kotak[x][y] adalah bilangan yang ada pada kotak (x, y))
+Dimana _(x, y)_ adalah suatu kotak yang ada papan catur yang memiliki total perpindahan menuju kotak _(i, j)_
+ (secara vertikal dan horizontal) sebesar nilai pada kotak _(x, y)_ i.e (terdapat suatu bilangan bulat non-negatif _k_ , dimana _x+k_ = _i_ dan _y+kotak[x][y]-k_ = _j_ dengan _kotak[x][y]_ adalah bilangan yang ada pada kotak _(x, y)_)
 
-Proses implementasi dengan bottom-up akan dilakukan dengan iterasi tiap kotak yang ada pada papan catur, lalu melakukan update nilai ways[i][j] sesuai dengan nilai pada tabel ways[][] yang sudah didapat sebelumnya.
+Proses implementasi dengan bottom-up akan dilakukan dengan iterasi tiap kotak yang ada pada papan catur, lalu melakukan update nilai **_ways[i][j]_** sesuai dengan nilai pada tabel **_ways[][]_** yang sudah didapat sebelumnya.
 
 ## Cara Menjalankan
 Untuk menjalankan program ini, pastikan terdapat compiler `g++` yang sudah terpasang. 
@@ -99,11 +100,11 @@ Input :
 Output :
 ```
 6
-20 ms
+0.100 ms
 ```
 Screenshot:
 
-<img src="image/tc-1.png" width="750" height="500" /> <br />
+<img src="image/tc-1.png" width="750" height="500"/> <br/>
 
 ### Kasus Uji 2
 Input:
@@ -118,11 +119,11 @@ Input:
 Output :
 ```
 0
-1 ms
+0.082 ms
 ```
 Screenshot:
 
-<img src="image/tc-2.png" width="750" height="500" /> <br />
+<img src="image/tc-2.png" width="750" height="500"/> <br/>
 
 ## Kasus Uji 3
 Input:
@@ -140,5 +141,78 @@ Output:
 ```
 Screenshot:
 
-<img src="image/tc-3.png" width="300" height="300	" /> <br />
+<img src="image/tc-3.png" width="750" height="500"/> <br/>
 
+## Kasus Uji 4
+Input:
+```
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+```
+Output:
+```
+40116600
+0.140 ms
+```
+Screenshot:
+
+<img src="image/tc-4.png" width="750" height="500"/> <br/>
+
+## Kasus Uji 5
+Input:
+```
+1 1 2 3 1 1 1 1 1 0
+0 1 1 2 1 10 1 1 1 0
+1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 1 1
+1 1 1 2 1 2 3 1 2 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+```
+Output:
+```
+100
+0.167 ms
+```
+Screenshot:
+
+<img src="image/tc-5.png" width="750" height="500"/> <br/>
+
+## Kasus Uji 6
+Input:
+```
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+```
+Output:
+```
+0
+0.160 ms
+```
+Screenshot:
+
+<img src="image/tc-6.png" width="750" height="500"/> <br/>
