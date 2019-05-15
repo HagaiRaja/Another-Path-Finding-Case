@@ -78,6 +78,15 @@ atau
 ```
 pada sistem operasi linux
 
+## Spesifikasi Mesin
+Dalam melakukan pembuatan, pengembangan dan pengujian program, spesifikasi mesin yang digunakan adalah sebagai berikut:
+
+* System Manufacture	: Hewlett-Packard
+* System Model		: HP Notebook
+* Processor		: Intel(R) Core(TM)i5-5200U CPU @ 2.20GHz (4 CPus), ~2.2GHz
+* Operating System	: Ubuntu 16.04
+* Memory		: 4096 GB RAM
+
 ## Pengujian
 ### Kasus Uji 1 
 Input :
@@ -90,8 +99,11 @@ Input :
 Output :
 ```
 6
-20ms
+20 ms
 ```
+Screenshot:
+<img src="image/tc-1.png" width="300" height="150" /> <br />
+
 ### Kasus Uji 2
 Input:
 ```
@@ -105,6 +117,25 @@ Input:
 Output :
 ```
 0
-1ms
+1 ms
 ```
+Screenshot:
+<img src="image/tc-2.png" width="300" height="150" /> <br />
+
+## Kasus Uji 3
+Input:
+```
+1 1 1 1 1
+2 1 2 1 1
+1 1 1 1 1
+2 1 2 1 1
+2 2 2 2 0
+```
+Output:
+```
+25
+0.056 ms
+```
+Screenshot:
+<img src="image/tc-3.png" width="300" height="150" /> <br />
 
