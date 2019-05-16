@@ -114,3 +114,16 @@ jalur yang mungkin adalah
 * **GNOME**: 3.28.2
 * **OS**: Ubuntu 18.04
 * **OS type**: 64-bit
+
+## Cara Menjalankan
+
+1. **Compile** program terlebih dahulu dengan g++
+```
+g++ main.cpp -o main
+```
+2. **Jalankan** program dan masukan input papanCatur
+```
+./main
+```
+3. Jika sudah tekan **Ctrl+D** atau masukkan input yang bukan angka
+4. Ditampilkan **jumlah path** dari posisi (1, 1) ke (N, N)
