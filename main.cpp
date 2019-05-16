@@ -3,97 +3,72 @@
 #include <math.h>
 #include <chrono>
 #include <unistd.h>
+#include <string.h>
 using namespace std;
 
-void printPapan(vector<vector<int>> papanCatur)
-{
-    // fungsi menampilkan array 2D ke layar
-    for (int i = 0; i < papanCatur.size(); i++)
-    {
-        for (int j = 0; j < papanCatur[i].size() - 1; j++)
-        {
-            cout << papanCatur[i][j] << " ";
-        }
-        cout << papanCatur[i][papanCatur[i].size() - 1] << endl;
-    }
-}
-void rekurensFinding(vector<vector<int>> *pd, vector<vector<int>> papanCatur, int brsAwal, int kolAwal)
+int n; // dimensi array
+int rekurensFinding(int **pd, int **papanCatur, int brsAwal, int kolAwal)
 {
     // fungsi rekursif dengan metode dynamic programming untuk mencari jumlah path yang mungkin
-    if (papanCatur[brsAwal][kolAwal] == 0)
+    if (brsAwal == n - 1 && kolAwal == n - 1)
     {
-        // jika ditemukan elemen dengan nilai 0
-        if (brsAwal == papanCatur.size() - 1 && kolAwal == papanCatur[brsAwal].size() - 1)
-        {
-            // jika di pojok kanan bawah maka ubah menjadi 1
-            ((*pd)[brsAwal][kolAwal]) = 1;
-        }
+        // jika di pojok kanan bawah maka menjadi 1 path
+        return 1;
     }
-    else
+    else if (pd[brsAwal][kolAwal] != -1)
     {
-        // jika elemen bukan bernilai 0
+        // jika sudah pernah dilewati
+        return pd[brsAwal][kolAwal];
+    }
+    else if (papanCatur[brsAwal][kolAwal] != 0)
+    {
+        // jika elemen papanCatur bukan bernilai 0
         int count = papanCatur[brsAwal][kolAwal]; // nilai element sekarang
+        // ubah menjadi 0, artinya pernah dicek
+        pd[brsAwal][kolAwal] = 0;
         // mencoba semua kemungkinan jalur dengan nilai count dari petak sekarang
         for (int i = 0; i <= count; i++)
         {
-            if (brsAwal + i < papanCatur.size())
+            if (brsAwal + i < n)
             {
                 // jika i tidak melewati batas baris
                 int j = count - i;
 
-                if (kolAwal + j < papanCatur[i].size())
+                if (kolAwal + j < n)
                 {
                     // jika j tidak melewati batas kolom
                     int brs = brsAwal + i;
                     int kol = kolAwal + j;
-                    if (((*pd)[brs][kol]) == 0)
-                    {
-                        // menghitung jumlah path dari jalur tersebut ke final
-                        rekurensFinding(pd, papanCatur, brs, kol);
-                    }
+                    // menghitung jumlah path dari jalur tersebut ke final
                     // jumlahkan semua kemungkinannya
-                    ((*pd)[brsAwal][kolAwal]) += (*pd)[brs][kol];
+                    pd[brsAwal][kolAwal] += rekurensFinding(pd, papanCatur, brs, kol);
                 }
             }
         }
+        return pd[brsAwal][kolAwal];
     }
 }
 
-int pathFinding(vector<vector<int>> papanCatur)
+int pathFinding(int **papanCatur)
 {
     // fungsi yang mereturn jumlah path yang mungkin dari pojok kiri atas ke pojok kanan bawah
-    vector<vector<int>> pd(papanCatur.size(), vector<int>(papanCatur.size()));
-
-    rekurensFinding(&pd, papanCatur, 0, 0);
-
-    return pd[0][0];
-}
-
-int main()
-{
-    // Main program
-    int n;                  // dimensi array
-    int input;              // variabel sementara menyimpan input user
-    vector<int> tempVector; // array 1 D
-    while (cin >> input)
-        // menerima input hingga habis
-        tempVector.push_back(input);
-    // mencari dimensi
-    n = sqrt(tempVector.size());
-    vector<vector<int>> papanCatur(n, vector<int>(n)); // array 2D
-    // convert dari 1D ke 2D
+    // inisialisasi vektor pd sebagai memory pemrograman dinamis, inisialisasi dengan -1
+    // sebagai tanda belum dicek
+    int **pd;
+    pd = new int *[n];
     for (int i = 0; i < n; i++)
     {
+        pd[i] = new int[n];
         for (int j = 0; j < n; j++)
         {
-            papanCatur[i][j] = tempVector[i * n + j];
+            pd[i][j] = -1;
         }
     }
     chrono::time_point<chrono::system_clock> start, end;
     // start timer
     start = chrono::system_clock::now();
-    // hitung path yang mungkin
-    int path = pathFinding(papanCatur);
+    // hitung jumlah path secara rekursif
+    int path = rekurensFinding(pd, papanCatur, 0, 0);
     // stop timer
     end = chrono::system_clock::now();
     // hitung durasi
@@ -102,5 +77,32 @@ int main()
     cout << path << endl;
     // print durasi waktu dalam ms
     cout << durasi.count() * 1000 << "ms" << endl;
+    // return jumlah path
+    return path;
+}
+
+int main()
+{
+    // Main program
+    int input;              // variabel sementara menyimpan input user
+    vector<int> tempVector; // array 1 D
+    while (cin >> input)
+        // menerima input hingga habis
+        tempVector.push_back(input);
+    // mencari dimensi
+    n = sqrt(tempVector.size());
+    int **papanCatur; // array 2D
+    papanCatur = new int *[n];
+    // convert dari 1D ke 2D
+    for (int i = 0; i < n; i++)
+    {
+        papanCatur[i] = new int[n];
+        for (int j = 0; j < n; j++)
+        {
+            papanCatur[i][j] = tempVector[i * n + j];
+        }
+    }
+    // hitung path yang mungkin
+    int path = pathFinding(papanCatur);
     return 0;
 }
