@@ -28,14 +28,14 @@ Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengemb
 ## Solusi
 Total langkah dari posisi (i, j) ke posisi (N, N) adalah jumlah semua langkah dari posisi-posisi yang mungkin dicapai dari posisi (i, j) berdasarkan bilangannya. Berdasarkan pemahaman tersebut, maka solusi yang digunakan adalah:
 
-f|function|-
+f|function||
 ---| --- | ---:
-**f(N, N)**|= 1 | *basis*<br/>
-**f(i, j)** |= !["Equation"](http://latex.codecogs.com/gif.latex?%5Csum_%7Bc%3D0%7D%5E%7BpapanCatur%5Bi%5D%5Bj%5D%7Df%28i&amp;plus;c%2C%20j&amp;plus;%28papanCatur%5Bi%5D%5Bj%5D-c%29%29) | *rekursif*
+**f(N, N)**| = 1 | *basis*<br/>
+**f(i, j)** | = !["Equation"](http://latex.codecogs.com/gif.latex?%5Csum_%7Bc%3D0%7D%5E%7BpapanCatur%5Bi%5D%5Bj%5D%7Df%28i&amp;plus;c%2C%20j&amp;plus;%28papanCatur%5Bi%5D%5Bj%5D-c%29%29) | *rekursif*
 
 Untuk setiap kali pemanggilan fungsi **f** akan diperiksa apakah baris dan kolom yang dicari masih di dalam batas, jika tidak maka jangan dipanggil.
 
-Jumlah path yang mungkin dapat dihasilkan dengan memanggil **f(0, 0)**.
+Jumlah path yang mungkin dapat dihasilkan dengan memanggil **f(1, 1)**.
 
 ## Kasus Uji
 ### Kasus Uji 1 
