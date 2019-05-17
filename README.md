@@ -16,9 +16,9 @@ Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
 ## Aplikasi Dynamic Programming pada Kasus Path Finding
 Pada kasus ini, digunakan algoritma Dynamic Programming dengan fungsi sebagai berikut :
 
-f(i,j) = 1 , i = N dan j = N (basis ketika nilai i dan j ada pada titik akhir)
-f(i,j) = 0 , i > N dan j > N (basis ketika nilai i dan j keluar matriks)
-f(i,j) = ![Capture](https://user-images.githubusercontent.com/38171936/57958286-9744cf80-7929-11e9-8126-56087fbf340a.JPG)
+1. f(i,j) = 1 , i = N dan j = N (basis ketika nilai i dan j ada pada titik akhir)
+2. f(i,j) = 0 , i > N dan j > N (basis ketika nilai i dan j keluar matriks)
+3. f(i,j) = ![Capture](https://user-images.githubusercontent.com/38171936/57958286-9744cf80-7929-11e9-8126-56087fbf340a.JPG)
 
 ## Spesifikasi Perangkat Keras
 1. Intel Core i7-7700 HQ
