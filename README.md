@@ -21,9 +21,9 @@ Pada kasus ini, digunakan algoritma Dynamic Programming dengan fungsi sebagai be
 3. f(i,j) = ![Capture](https://user-images.githubusercontent.com/38171936/57959167-a7aa7980-792c-11e9-8a22-2b201d20b553.JPG)
 
 ## Spesifikasi Perangkat Keras
-1. Intel Core i7-7700 HQ
+1. Intel® Core™ i7-7700HQ 2.80GHz
 2. RAM 16 GB
-3. Windows 10 Single Language
+3. Windows 10 Home Single Language 64-bit
 
 ## Uji Kasus
 
