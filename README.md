@@ -26,6 +26,42 @@ Pada kasus ini, digunakan algoritma Dynamic Programming dengan fungsi sebagai be
 3. Windows 10 Single Language
 
 ## Uji Kasus
-1. 
-2.
-3. 
+
+### Uji Kasus 1
+Input :
+```
+2 3 3 1
+1 2 1 3
+1 2 3 1
+3 1 1 0
+```
+
+Output : ![test1](https://user-images.githubusercontent.com/38171936/57958741-07078a00-792b-11e9-895d-e6f420d4ac21.JPG)
+
+### Uji Kasus 2
+Input :
+```
+2 3 0 1 3 1
+1 0 1 3 1 3
+0 2 3 1 3 1
+3 1 1 0 1 0
+1 2 1 3 1 3
+3 1 1 0 1 0
+```
+
+Output : ![tes2](https://user-images.githubusercontent.com/38171936/57958744-0e2e9800-792b-11e9-8fdb-0277dd8da95f.JPG)
+
+### Uji Kasus 3
+Input :
+```
+2 1 3 1 3 1 1 2
+3 3 1 3 1 3 2 0
+3 2 3 1 2 2 4 0
+3 1 1 0 1 3 2 3
+1 1 2 3 0 1 2 1
+2 1 1 3 2 1 1 4
+4 2 1 3 2 2 1 2
+0 2 3 0 1 2 3 3
+```
+
+Output : ![tes3](https://user-images.githubusercontent.com/38171936/57958751-138be280-792b-11e9-8410-54f4ed80b1b8.JPG)
