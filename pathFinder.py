@@ -64,4 +64,4 @@ if __name__ == "__main__":
     temp = pathFinding(mat)
     print(temp)
     endTime = time.time()
-    print(float(endTime - startTime))
+    print(str(float(endTime - startTime) * 1000) + " ms")
