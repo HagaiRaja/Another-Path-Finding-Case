@@ -3,7 +3,7 @@
 
 ## A. Langkah-langkah dynamic programming yang digunakan
 
-1. Memasukan ukuran matriks yang akan dicari solusinya
+1. Memasukan ukuran matriks yang akan dicari solusinya, beserta matriksnya itu sendiri
 2. Memulai pencarian dari titik 0,0
 3. Untuk setiap langkah yang memungkinkan, program akan membuka node baru dan akan memulai pencarian dari sana
 4. Ketika menemukan titik akhir, program akan mengembalikan angka 1
