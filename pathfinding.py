@@ -1,8 +1,19 @@
 import time
 
-file = open('input.txt', 'r')
+# file = open('input.txt', 'r')
 
 peta = []
+masukan = input()
+temp = masukan.split()
+for i in range(0,len(temp)):
+    temp[i] = int(temp[i])
+peta.append(temp)
+for i in range(0,len(temp)-1):
+    masukan = input()
+    temp = masukan.split()
+    for j in range(0,len(temp)):
+        temp[j] = int(temp[j])
+    peta.append(temp)
 
 def pathFinding(papanCatur):
     posisi = (0,0)
@@ -26,19 +37,19 @@ def pathFinding(papanCatur):
 
 
 #Isi Matriks
-N = int(input("Banyak Baris:"))
+N = int(len(peta[0]))
 
-for i in range(0,N):
-    baris = file.readline()
-    temp = baris.split()
-    peta.append(temp)
+# for i in range(0,N):
+#     baris = file.readline()
+#     temp = baris.split()
+#     peta.append(temp)
 
-file.close()
+# file.close()
 
 #Rubah peta ke integer
-for i in range(0,N):
-    for j in range(0,N):
-        peta[i][j] = int(peta[i][j])
+# for i in range(0,N):
+#     for j in range(0,N):
+#         peta[i][j] = int(peta[i][j])
 
 start_time = time.time()
 print(pathFinding(peta))
