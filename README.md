@@ -24,4 +24,11 @@ Dalam kasus ini, path finding tidak memerlukan pertimbangan. Solusi yang dihasil
 7. Jika posisi pada peta yang sedang diperiksa bernilai 0 dan berada di N,N maka program akan menambah jumlah count. Jika bukan berada di N,N, maka pencarian dihentikan.
 8. Program mengulangi langkah 5 selama tabel masih memiliki elemen didalamnya
 
+#Screenshot 1
+![alt text](https://github.com/timmysutanto/Another-Path-Finding-Case/blob/master/Screenshot%20from%202019-05-20%2012-15-34.png)
+
+#Screenshot 2
+![alt text](https://github.com/timmysutanto/Another-Path-Finding-Case/blob/master/Screenshot%20from%202019-05-20%2012-16-14.png)
+
+
 
