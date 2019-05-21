@@ -1,77 +1,34 @@
 # Dynamic Programming : Another Path Finding Case
-### **_(Ubah file README.md ini setelah program diselesaikan)_**
 
-## Latar Belakang
-*Path Finding* adalah masalah yang berfokus untuk mencari langkah paling optimum untuk bergerak dari posisi asal ke posisi akhir dengan batasan-batasan (*constraints*) tertentu. Masalah ini dapat diselesaikan dengan mudah menggunakan pendekatan strategi algoritma *dynamic programming* seperti pada contoh berikut oleh  [GeeksForGeeks](https://www.geeksforgeeks.org/min-cost-path-dp-6/). Banyak penerapan yang memiliki fokus berbeda terkait topik *Path Finding* seperti pada robot, game, image processing serta pengelolahan efisien industri. Semua kasus ini berkutat dalam mengoptimasi dari sisi paling pendek, paling murah, paling cepat dan parameter lainnya. 
+## Dynamic Programming
+Dynamic Programming adalah metode menyelesaikan masalah dengan cara menguraikan permasalahan menjadi beberapa tahap penyelesaian. Penyelesaian masalah dalam setiap tahapnya diselesaikan dengan menggunakan tabel-tabel. Solusi dari persoalan tersebut merupakan serangkaian keputusan yang saling berkaitan.
 
-Pada tugas kali ini, anda akan bertugas untuk memodifikasi algoritma *path finding* agar sesuai dengan kebutuhan soal. Diharapkan melalui tugas ini, anda dapat lebih memahami penerapan strategi *dynamic programming* yang sering digunakan dalam dunia IT terkhusus filosofi cara berpikir penyelesaian masalah terkait *path finding*. Selamat mengerjakan!
+Rangkaian keputusan yang optimal dibuat menggunakan prinsip optimalitas. Prinsip Optimalitas adalah jika solusi optimal, maka bagian solusi sampai tahap ke-k juga optimal. 
 
-## Kasus Path Finding
-Berikut adalah deskripsi kondisi persoalan yang akan diselesaikan.
-1. Terdapat sebuah papan catur *N x N* dengan setiap kotaknya berisi bilangan non negatif.
-2. Di awal, suatu bidak berada kotak (1, 1) atau yang di pojok kiri atas.
-3. Berikutnya secara berulang bidak dapat dipindahkan (1) horizontal ke kanan, atau (2) vertikal ke bawah sekian kotak sebanyak dengan bilangan pada kotak terakhir bidak itu berada, kecuali kalau membawa bidak keluar dari papan.
-4. Tujuan akhir adalah kotak (N, N) atau yang pojok kanan bawah.
-5. Bila bilangan terakhir adalah 0 dan bukan di pojok maka bidak berhenti (tidak dapat melanjutkan langkah kecuali kalau sudah mencapai tujuan).
+Dalam solusi yang telah dirancang dalam program ini, tabel yang digunakan hanya ada satu, yaitu tabel yang berisi tentang posisi-posisi yang masih dapat ditelusuri dalam peta.
 
-## Spesifikasi
-Lakukan fork terhadap repository ini.
+Pencarian dihentikan ketika posisi berada di N,N atau jika peta berisi 0 pada posisi sekarang. Jika peta berisi 0 tetapi posisi bukan berada di N,N maka pencarian dihentikan
 
-Buatlah dalam bahasa pemrograman **_Python_** atau **_C++_**, sebuah fungsi dalam program berbasis CLI yang dapat menyelesaikan persoalan cerita diatas yang menghitung :
-1. Banyaknya cara yang mungkin untuk bisa mencapai tujuan akhir.
-2. Waktu yang digunakan untuk mencari semua solusi.
+## Path Finding
+Path Finding adalah metode penyelesaian sebuah masalah pencarian jalan dari sebuah lokasi ke lokasi tertentu. Path Finding biasanya dilakukan dengan berbagai macam pertimbangan, seperti pencarian jalan terpendek, pencarian jalan dengan bobot terendah, dan lain-lain.
 
-Deklarasi fungsi :
-```C++
-int pathFinding(papanCatur);
-```
-Fungsi menampilkan jumlah kemungkinan dan waktu ke layar serta melakukan pengembalian jumlah kemungkinan tersebut.
+Dalam kasus ini, path finding tidak memerlukan pertimbangan. Solusi yang dihasilkan hanya berupa banyaknya kombinasi jalan dari titik awal (0,0) ke titik (N,N).
 
-**Setelah program dan laporan pada Readme.md anda sudah selesai, lakukan pull request kembali pada branch ini.**
+## Langkah Program
+1. Program akan membaca masukan dari pengguna berupa matriks angka
+2. Program melakukan inisialisasi variabel-variabel yang akan digunakan seperti posisi, tabel solusi, dan count
+3. Program mencatat waktu dalam sistem sebagai waktu awal
+4. Pada awal pencarian jalan, program memasukkan titik 0,0 ke dalam tabel
+5. Program kemudian mengambil elemen pertama dari tabel.
+6. Program melakukan pemeriksaan terhadap semua kemungkinan perubahan posisi. Jika setiap posisi tersebut tidak melanggar aturan (keluar tabel), program akan memasukkan posisi tersebut ke dalam tabel
+7. Jika posisi pada peta yang sedang diperiksa bernilai 0 dan berada di N,N maka program akan menambah jumlah count. Jika bukan berada di N,N, maka pencarian dihentikan.
+8. Program mengulangi langkah 5 selama tabel masih memiliki elemen didalamnya
 
-## Contoh Kasus Uji
-### Contoh Kasus Uji 1 
-Input :
-```
-2 3 3 1
-1 2 1 3
-1 2 3 1
-3 1 1 0
-```
-Output :
-```
-6
-20ms
-```
-Penjelasan :
-jalur yang mungkin adalah
-1. [1][1] -> [2][2] -> [2][4] -> [4][4]
-2. [1][1] -> [3][1] -> [4][3] -> [4][4]
-3. [1][1] -> [3][1] -> [3][4] -> [4][4]
-4. [1][1] -> [1][3] -> [1][4] -> [4][4]
-5. [1][1] -> [1][3] -> [2][3] -> [3][4] -> [4][4]
-6. [1][1] -> [1][3] -> [2][3] -> [4][3] -> [4][4]
+## Screenshot 1
+![alt text](https://github.com/timmysutanto/Another-Path-Finding-Case/blob/master/Screenshot%20from%202019-05-20%2012-15-34.png)
 
-### Contoh Kasus Uji 2
-Input:
-```
-2 3 0 1 3 1
-1 0 1 3 1 3
-0 2 3 1 3 1
-3 1 1 0 1 0
-1 2 1 3 1 3
-3 1 1 0 1 0
-```
-Output :
-```
-0
-1ms
-```
+## Screenshot 2
+![alt text](https://github.com/timmysutanto/Another-Path-Finding-Case/blob/master/Screenshot%20from%202019-05-20%2012-16-14.png)
 
-## Penilaian
-- Kebenaran keluaran fungsi - 40%
-- Pemahaman tentang dynamic programming dan path finding (jelaskan langkah yang digunakan secara singkat) - 30%
-- Kecepatan eksekusi program (lampirkan screenshot pada readme beserta spesifikasi mesin yang dipakai untuk testing) - 20%
-- Kecepatan Pull Request - 10%
 
-Nilai maksimum yang bisa didapatkan adalah **700** poin. _(Tujuh Ratus)_
+
